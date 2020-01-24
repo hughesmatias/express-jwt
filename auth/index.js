@@ -2,8 +2,7 @@ const jwt = require('jsonwebtoken');
 const express = require('express');
 var router = express.Router();
 
-
-router.use('/', (req, res, next) => {
+router.post('/', (req, res, next) => {
   signIn("username").then(token => {
     res.end(token);
   }).catch((err) => {
